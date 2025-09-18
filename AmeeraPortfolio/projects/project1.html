@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Ticket Booking App - Project Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* أنماط CSS الحالية (نفسها) */
+        :root {
+            --primary: #ff6b6b;
+            --secondary: #c44545;
+            --dark: #121212;
+            --darker: #0a0a0a;
+            --light: #e6e6e6;
+            --accent: #4ecdc4;
+            --text: #f5f5f7;
+            --card-bg: #1e1e1e;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --border-radius: 10px;
+            --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+        .container {
+            max-width: 1700px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0;
+            background: linear-gradient(120deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 0 0 20px 20px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.1' d='M0,128L48,117.3C96,107,192,85,288,112C384,139,480,213,576,224C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .navigation-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            position: relative;
+        }
+        
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .project-info {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .story-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border-left: 4px solid var(--primary);
+            flex: 1;
+        }
+        
+        .story-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .section-title i {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .section-content {
+            padding: 0 10px;
+        }
+        
+        .screenshot-gallery {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--box-shadow);
+            height: 1400px;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 220px;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.25);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 12px;
+            text-align: center;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+        
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+        
+        .process-steps {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px 0;
+            gap: 20px;
+            scrollbar-width: thin;
+        }
+        
+        .step {
+            min-width: 250px;
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            padding: 25px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .results {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .result-card {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .result-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .result-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .tech-item {
+            background: linear-gradient(135deg, var(--darker), var(--dark));
+            padding: 12px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: var(--box-shadow);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tech-item i {
+            color: var(--primary);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            margin-top: auto;
+            color: var(--text);
+            opacity: 0.8;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 107, 107, 0.3);
+        }
+        
+        .modal-content img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .close:hover {
+            color: var(--accent);
+        }
+        
+        /* Video section styles */
+        .video-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-container video {
+            width: 100%;
+            display: block;
+            border-radius: var(--border-radius);
+        }
+        .video-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 40px 0 30px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 1;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .play-button {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+            animation: pulse 2s infinite;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+            background: var(--secondary);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(255, 107, 107, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+            }
+        }
+        .video-section {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 30px;
+    margin: 40px 0;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+}
+
+.video-title {
+    color: var(--primary);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.video-container video {
+    width: 100%;
+    display: block;
+    border-radius: var(--border-radius);
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 1;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.video-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.play-button {
+    width: 80px;
+    height: 80px;
+    background: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    transition: var(--transition);
+    animation: pulse 2s infinite;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+    background: var(--secondary);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(var(--primary-rgb), 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(var(--primary-rgb), 0);
+    }
+}
+
+.video-description {
+    margin-top: 15px;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+/* إضافة متغير اللون الأساسي بصيغة RGB */
+:root {
+    --primary-rgb: 58, 134, 255; /* قيم RGB للون الأساسي */
+}
+        .app-logo {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .app-logo img {
+            max-width: 200px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+        }
+        
+        /* Mobile-specific improvements */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+            }
+            
+            .results {
+                flex-direction: column;
+            }
+            
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-item {
+                height: 250px; /* Increased height for better mobile view */
+            }
+            
+            .project-info, .screenshot-gallery, .video-section {
+                padding: 20px;
+            }
+            
+            .story-section {
+                padding: 20px;
+            }
+            
+            .navigation-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Improved mobile image sizing */
+            .gallery-item img {
+                object-position: center top; /* Better focus for mobile screens */
+            }
+            
+            /* Adjust section titles for mobile */
+            .section-title {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            
+            .section-title i {
+                margin-right: 0;
+                font-size: 2rem;
+            }
+            
+            .play-button {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
+            
+            .app-logo img {
+                max-width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 40px 0;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-item {
+                height: 200px; /* Optimal height for very small screens */
+            }
+            
+            .result-card {
+                min-width: 100%;
+            }
+            
+            .tech-item {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+            
+            /* Further adjustments for very small screens */
+            .gallery-caption {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+            
+            .result-value {
+                font-size: 1.7rem;
+            }
+            
+            .result-card i {
+                font-size: 2rem;
+            }
+        }
+
+        /* Additional improvements for tablet screens */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .gallery-item {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Cinema Ticket Booking App</h1>
+            <p class="subtitle">A modern cinema ticket booking application with real-time seat selection</p>
+        
+            <div class="navigation-buttons">
+                <a href="../index.html#projects" class="nav-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Projects
+                </a>
+                <a href="https://github.com/meera3004/Cinema_ticket_booking_app" class="nav-btn" target="_blank">
+                    <i class="fab fa-github"></i>
+                    View on GitHub
+                </a>
+                <a href="https://ameeraalkhyeami.wistia.com/medias/d59ekdca9x" class="nav-btn" target="_blank">
+                    <i class='fas fa-play'></i>
+                    View the application video
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <div class="project-info">
+                <div class="story-section">
+                    <div class="section-title">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h2>The Challenge</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>Traditional cinema ticket booking systems often have clunky interfaces and don't provide real-time seat availability. Users struggle with complicated booking processes and often end up with suboptimal seating arrangements.</p>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <div class="section-title">
+                        <i class="fas fa-user-tie"></i>
+                        <h2>My Role</h2>
+                    </div>
+                    <div class="section-content">
+                        <p>I designed the UI/UX and developed flutter using dart . I implemented the user interface and administrative employee interface and the real-time seat selection feature . I also conducted user testing to optimize the booking flow.</p>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <div class="section-title">
+                        <i class="fas fa-cogs"></i>
+                        <h2>The Process</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="process-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <h3>Research</h3>
+                                <p>Analyzed existing booking systems and identified pain points</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <h3>Design</h3>
+                                <p>Created interactive prototypes for the booking flow</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <h3>Development</h3>
+                                <p>Built the app using flutter workframe and Dart</p>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <h3>Testing</h3>
+                                <p>Conducted usability testing with real users</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <div class="section-title">
+                        <i class="fas fa-chart-line"></i>
+                        <h2>Results & Impact</h2>
+                    </div>
+                    <div class="section-content">
+                        <div class="results">
+                            <div class="result-card">
+                                <i class="fas fa-ticket-alt"></i>
+                                <div class="result-value">+25K</div>
+                                <p>Tickets booked monthly</p>
+                            </div>
+                            <div class="result-card">
+                                <i class="fas fa-star"></i>
+                                <div class="result-value">4.2/5</div>
+                                <p>Average user rating</p>
+                            </div>
+                            <div class="result-card">
+                                <i class="fas fa-clock"></i>
+                                <div class="result-value">35%</div>
+                                <p>Faster booking process</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="story-section">
+                    <div class="section-title">
+                        <i class="fas fa-code"></i>
+                        <h2>Tech Stack</h2>
+                    </div>
+                    
+
+                    <div class="section-content">
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <span>Flutter</span>
+                            </div>
+                            <div class="tech-item">
+                                <span>Dart</span>
+                            </div>
+                            <div class="tech-item">
+                                <span>UI/UX</span>
+                            </div>
+                            <div class="tech-item">
+                                <span>Figma</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="screenshot-gallery">
+                <h2 class="gallery-title">App Screenshots</h2>
+                <div class="gallery-container">
+                    <div class="gallery-item">
+                        <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\cinema\LoginScreen.jpg" alt="Login Screen">
+                        <div class="gallery-caption">Login Screen</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\cinema\MoviesSelectionScree.jpg" alt="Movies Selection Screen">
+                        <div class="gallery-caption">Movies Selection Screen</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\cinema\MoviesDetailsScreen.jpg" alt="Movies Details Screen">
+                                 <div class="gallery-caption">Movies Details Screen</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\cinema\SeatSelectionScreen.jpg" alt="Seat Selection Screen">
+
+                        <div class="gallery-caption">Seat Selection Screen</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\cinema\EmployeeScreen.jpg" alt="Employee Screen">
+                        <div class="gallery-caption">Employee Screen</div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="">
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 All Rights Reserved | Developed with Passion ❤️</p>
+        </div>
+    </footer>
+
+    <script>
+        // Modal functionality for image gallery
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("modalImage");
+        const closeBtn = document.querySelector(".close");
+        
+        document.querySelectorAll('.gallery-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                modal.style.display = "flex";
+                modalImg.src = img.src;
+            });
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = "none";
+        });
+        
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+        
+        const video = document.getElementById('appVideo');
+        const videoOverlay = document.getElementById('videoOverlay');
+
+        if (video && videoOverlay) {
+            videoOverlay.addEventListener('click', () => {
+                video.play();
+                videoOverlay.classList.add('hidden');
+                video.setAttribute('controls', 'true');
+            });
+            
+            video.addEventListener('pause', () => {
+                videoOverlay.classList.remove('hidden');
+            });
+            
+            video.addEventListener('ended', () => {
+                videoOverlay.classList.remove('hidden');
+                video.removeAttribute('controls');
+            });
+        }
+        
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const storySections = document.querySelectorAll('.story-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            storySections.forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

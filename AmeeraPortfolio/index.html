@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ameera Ayman | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header/Navigation -->
+    <header>
+ <nav>
+            <a href="#" class="logo">Ameera<span>Portfolio</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span>Ameera</span></br><span> Al-Khyeami</span></h1>
+                <p>Information Technology Engineering Student specializing in Front-end and Flutter development. Passionate about creating innovative digital solutions.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">View Projects</a>
+                    <a href="#contact" class="btn btn-outline">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\profile.PNG" alt="Ameera Ayman">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <img src="C:\Users\Ameera Al-Khyeami\Desktop\AmeeraPortfolio\images\aboutimage.JPG" alt="Ameera Ayman">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h3>IT Engineering Student & Developer</h3>
+                    <p>An enthusiastic and creative IT student, passionate about the cause and design of outstanding user experiences. </p>
+                    <p>I am always seeking to learn the latest developments and apply them to solving real-world problems. I enjoy strong analytical skills and the ability to learn quickly within a team,</p>
+                    <p> and I aspire to become an advanced communicator in the field of developing applications that make a positive difference.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ <!-- Vision & Mission Section -->
+    <section id="vision-mission">
+        <div class="container">
+            <h2 class="section-title">Vision & Mission</h2>
+            <div class="vm-container">
+                <div class="vision">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3 class="vm-title">My Vision</h3>
+                    <div class="vm-content">
+                        <p>To become a leading developer creating innovative digital solutions that positively impact people's lives and transform how we interact with technology.</p>
+                        <p>I envision a future where technology serves humanity in intuitive, accessible, and meaningful ways.</p>
+                    </div>
+                </div>
+                <div class="mission">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3 class="vm-title">My Mission</h3>
+                    <div class="vm-content">
+                        <p>To develop user-centered applications that solve real problems through clean code, thoughtful design, and continuous learning.</p>
+                        <p>I'm committed to expanding my skills, collaborating with diverse teams, and creating technology that makes a difference in people's everyday lives.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <!-- Web Development -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Web & Mobile Dev</h3>
+                    <div class="compact-view">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-mobile"></i>
+                                    </div>
+                                    <span>Flutter</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-html5"></i>
+                                    </div>
+                                    <span>HTML5</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot "></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-css3-alt"></i>
+                                    </div>
+                                    <span>CSS3</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot "></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-js"></i>
+                                    </div>
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Development Tools -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Dev Tools</h3>
+                    <div class="compact-view">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fab fa-git-alt"></i>
+                                    </div>
+                                    <span>Git & GitHub</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot "></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-code"></i>
+                                    </div>
+                                    <span>VS Code</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-paint-brush"></i>
+                                    </div>
+                                    <span>Adobe XD</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Personal Skills -->
+                <div class="skill-category">
+                    <h3><i class="fas fa-user"></i> Soft Skills</h3>
+                    <div class="compact-view">
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <span>Problem Solving</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <span>Teamwork</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <span>Time Management</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <div class="skill-name">
+                                    <div class="skill-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <span>Communication</span>
+                                </div>
+                            </div>
+                            <div class="skill-rating">
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot active"></div>
+                                <div class="rating-dot"></div>
+                                <div class="rating-dot"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" style="background-color: var(--darker);">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">My professional journey and career achievements</p>
+            <div class="experience-grid">
+                <!-- Experience 1 --> 
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="job-title">
+                            <h3>IT Trainee</h3>
+                            <span class="company">College of Information Technology</span>
+                        </div>
+                        <div class="date-badge">
+                            <span>2025</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="job-description">Gained practical experience in software development and web applications through college training programs. Worked on real-world projects and enhanced technical skills.</p>
+                        
+                        <div class="job-details">
+                            <span class="job-type internship">Internship</span>
+                            <span class="job-location">Damascus, Syria</span>
+                        </div>
+                        
+                        <div class="skills-used">
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">Database Design</span>
+                            <span class="skill-tag">Problem Solving</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="job-title">
+                            <h3>Flutter Developer</h3>
+                            <span class="company">Creative Brain Foundation</span>
+                        </div>
+                        <div class="date-badge">
+                            <span>2024 - Present</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="job-description">Developing mobile applications using Flutter, implementing new features, and collaborating with the design team to create seamless user experiences.</p>
+                        
+                        <div class="job-details">
+                            <span class="job-type full-time">Full-time</span>
+                            <span class="job-location">Damascus, Syria</span>
+                        </div>
+                        
+                        <div class="skills-used">
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">UI/UX Design</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Experience 3 -->             
+                <div class="experience-card">
+                    <div class="card-header">
+                        <div class="company-logo">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="job-title">
+                            <h3>Programming Team Member</h3>
+                            <span class="company">DevShare Team</span>
+                        </div>
+                        <div class="date-badge">
+                            <span>2022 - 2023</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <p class="job-description">Contributed to collaborative projects and developed innovative software solutions in a team environment. Participated in code reviews and agile development processes.</p>
+                        
+                        <div class="job-details">
+                            <span class="job-type part-time">Part-time</span>
+                            <span class="job-location">Remote</span>
+                        </div>
+                        
+                        <div class="skills-used">
+                            <span class="skill-tag">Flutter</span>
+                            <span class="skill-tag">Dart</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">My Projects</h2>
+            <p class="section-subtitle">A showcase of my recent work and developments</p>
+
+            <div class="scroll-indicator">
+                <i class="fas fa-arrow-left"></i> Scroll horizontally to view more projects <i class="fas fa-arrow-right"></i>
+            </div>
+
+            <div class="slider-container" id="slider-container">
+                <div class="slider-track" id="slider-track">
+                    <!-- Project 1 -->
+                    <div class="project-slide">
+                        <div class="project-card" data-project="project1">
+                            <a href="projects/project1.html">
+                            <div class="project-image">
+                                <img src="https://i.imgur.com/bgfRLTE.jpeg" alt="Cinema App">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Cinema Ticket Booking App</h3>
+                                <span class="project-date">2025</span>
+                                <p class="project-description">A mobile application for booking cinema tickets with a seamless user experience.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">Dart</span>
+                                    <span class="project-tag">Firebase</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/meera3004/Cinema_ticket_booking_app" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="projects/project1.html" class="project-link outline demo-link" data-project="project1">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-slide">
+                        <div class="project-card" data-project="project2">
+                            <a href="projects/project2.html">
+                            <div class="project-image">
+                                <img src="https://i.imgur.com/UzzE8Z3.jpeg" alt="Neuvana App">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Neuvana App</h3>
+                                <span class="project-date">2025</span>
+                                <p class="project-description">An innovative application for neuroscience and mental wellness.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">Dart</span>
+                                    <span class="project-tag">AI</span>
+                                </div>
+                                <div class="project-links" style="margin-top: 15px;">
+                                    <a href="https://github.com/meera3004/NeuvanaAppForUrMentalHealth" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="projects/neuvana-app-demo.html" class="project-link outline demo-link" data-project="project2">
+                                        <i class="projects/project2.html"></i> Demo
+                                    </a>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-slide">
+                        <div class="project-card" data-project="project3">
+                            <a href="projects/project3.html">
+                            <div class="project-image">
+                                <img src="https://i.imgur.com/LiZeVxY.jpeg" alt="FloraScan App">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">FloraScan App</h3>
+                                <span class="project-date">2024</span>
+                                <p class="project-description">Plant identification app using AI and machine learning technologies.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">Flutter</span>
+                                    <span class="project-tag">TensorFlow</span>
+                                </div>
+                                <div class="project-links" style="margin-top: 15px;">
+                                
+                                    <a href="https://github.com/meera3004/FloraScanApp" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="projects/project3.html" class="project-link outline demo-link" data-project="project3">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-slide">
+                        <div class="project-card" data-project="project4">
+                            <a href="projects/project4.html">
+                            <div class="project-image">
+                                <img src="https://i.imgur.com/ttKK4uD.jpeg" alt="SignVerse App">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">SignVerse App</h3>
+                                <span class="project-date">2024</span>
+                                <p class="project-description">Sign language translation application with real-time gesture recognition.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML, CSS</span>
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">React</span>
+                                </div>
+                                <div class="project-links" style="margin-top: 15px;">
+                                    <a href="https://github.com/meera3004/SignVerseApp" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="projects/project4.html" class="project-link outline demo-link" data-project="project4">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-slide">
+                        <div class="project-card" data-project="project5">
+                            <a href="projects/project5.html">
+                            <div class="project-image">
+                                <img src="https://i.imgur.com/tVeYRvJ.jpeg" alt="EduPlay Adventures App">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">EduPlay Adventures App</h3>
+                                <span class="project-date">2024</span>
+                                <p class="project-description">Educational gaming platform for children with interactive learning experiences.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML, CSS</span>
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">React</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/meera3004/EduPlayApp" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="projects/project5.html" class="project-link outline demo-link" data-project="project5">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-slide">
+                        <div class="project-card" data-project="project6">
+                            <a href="projects/project6.html">
+                            <div class="project-image">
+                                <img src="https://i.imgur.com/2TaNBHH.jpeg" alt="RoboMind App">
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">RoboMind App</h3>
+                                <span class="project-date">2024</span>
+                                <p class="project-description">Robotics programming and simulation environment for educational purposes.</p>
+                                <div class="project-tags">
+                                    <span class="project-tag">HTML, CSS</span>
+                                    <span class="project-tag">JavaScript</span>
+                                    <span class="project-tag">React</span>
+                                </div>
+                                <div class="project-links" style="margin-top: 15px;">
+                                    <a href="https://github.com/meera3004/RoboMindApp" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i> Code
+                                    </a>
+                                    <a href="projects/project6.html" class="project-link outline demo-link" data-project="project6">
+                                        <i class="fas fa-external-link-alt"></i> Demo
+                                    </a>
+                                </div>
+                            </div></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <p class="section-subtitle">My academic journey and continuous learning path</p>
+            
+            <div class="scroll-indicator">
+                <i class="fas fa-arrow-left"></i> Scroll horizontally to view more <i class="fas fa-arrow-right"></i>
+            </div>
+            
+            <div class="education-track" id="education-track">
+                <!-- Slide 1 -->
+                <div class="education-slide">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Information Technology Engineering</h3>
+                            <span class="education-date">2021 - 2026 Expected</span>
+                            <p>International University for Science and Technology (IUST). Currently working on graduation project.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="education-slide">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Web Development Mastery</h3>
+                            <span class="education-date">2024</span>
+                            <p>Advanced web development techniques, responsive design, and modern frameworks.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="education-slide">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Flutter Development</h3>
+                            <span class="education-date">2022</span>
+                            <p>Advanced course in Flutter and Dart programming. Mobile app development for iOS and Android.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 4 -->
+                <div class="education-slide">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Specialized Courses</h3>
+                            <span class="education-date">2021-2022</span>
+                            <p>Spike Prime for Kids programming, Arduino and IoT development, UI/UX Design principles.</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Slide 5 -->
+                <div class="education-slide">
+                    <div class="education-card">
+                        <div class="education-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="education-content">
+                            <h3>Front-end Development</h3>
+                            <span class="education-date">2021</span>
+                            <p>Comprehensive front-end development program. HTML, CSS, JavaScript, and React framework.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+        <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>Feel free to reach out to me for any questions or opportunities. I'm always open to discussing new projects and ideas.</p>
+                    
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <span>ameeraalkhyeami@gmail.com</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class='fas fa-phone'></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <span>+963 949 979 121</span>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Damascus, Syria</span>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                    <div class="social-links contact-social">
+                        <a href="http://github.com/meera3004" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="http://linkedin.com/in/ameera-al-khyeami-97b019379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="http://instagram.com/sk_sjzz?igsh=N3c3dHAwaHV2aWQy&utm_source=qr" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="http://facebook.com/share/16wRPqPRUi/?mibextid=wwXIfr" class="social-link" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Ameera<span>Portfolio</span></div>
+                
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                
+                <div class="footer-social">
+                    <a href="http://github.com/meera3004"><i class="fab fa-github"></i></a>
+                    <a href="http://linkedin.com/in/ameera-al-khyeami-97b019379?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="http://instagram.com/sk_sjzz?igsh=N3c3dHAwaHV2aWQy&utm_source=qr"><i class="fab fa-instagram"></i></a>
+                    <a href="http://facebook.com/share/16wRPqPRUi/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025 Ameera Ayman Alkhyeami. All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#home" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <div class="alert" id="alert">The project page opens...</div>
+
+    <script src="script.js"></script>
+      <!-- Font Awesome for icons -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3.2.0/dist/email.min.js"></script>
+</body>
+</html>
